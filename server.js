@@ -1,12 +1,18 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv"); // Import the dotenv package
 
 const routes = require("./routes/routes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const DB_URL = "mongodb://127.0.0.1:27017/urls";
+
+// Load environment variables from .env file
+dotenv.config();
+
+// Fetch the MongoDB URL from the environment variables
+const DB_URL = process.env.MONGODB_URL ;
 
 (async () => {
   try {
@@ -19,6 +25,7 @@ const DB_URL = "mongodb://127.0.0.1:27017/urls";
 
     // Configure data parsing for incoming requests
     app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
 
     // Set the view engine to use EJS templates
     app.set("view engine", "ejs");
