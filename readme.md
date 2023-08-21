@@ -1,4 +1,3 @@
-````markdown
 # Linkly URL Shortener
 
 Linkly is a simple URL shortener application that allows users to create shortened URLs for long links. This repository contains the backend code for the Linkly application.
@@ -32,7 +31,6 @@ Linkly is a URL shortener service that converts long URLs into short, easy-to-sh
    ```sh
    git clone https://github.com/yourusername/linkly-backend.git
    ```
-````
 
 2. Install the dependencies:
 
