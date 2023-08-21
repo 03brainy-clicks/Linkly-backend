@@ -22,6 +22,24 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Delete an url
+router.get("/delete/:url", async (req, res) => {
+  try {
+    const deletedUrl = await ShortUrl.findOneAndDelete({ shortUrl: req.params.url });
+    
+    if (deletedUrl) {
+      console.log("Delete Successful");
+    } else {
+      console.log("URL not found");
+    }
+    
+    res.redirect("/");
+  } catch (error) {
+    res.status(500).send("Failed to delete URL: " + error.message);
+  }
+});
+
+
 // Redirect to the full URL when the short URL is accessed
 router.get("/:shortUrl", async (req, res) => {
   try {
