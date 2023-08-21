@@ -30,6 +30,7 @@ Linkly is a URL shortener service that converts long URLs into short, easy-to-sh
 
    ```sh
    git clone https://github.com/yourusername/linkly-backend.git
+
    ```
 
 2. Install the dependencies:
